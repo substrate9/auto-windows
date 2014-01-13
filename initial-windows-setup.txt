@@ -1,0 +1,16 @@
+WIN-Q0LTG4784UL
+
+WinRM user needs to be set in vagrantfile to something valid (vagrant/vagrant wasn't working - probably need to allow it more perms or something)
+
+net use x: \\vboxsvr\share
+
+steps to connect with PS remote:
+
+Test-WsMan localhost
+enter-pssession -computername localhost -credential Administrator
+
+iex ((new-object net.webclient).DownloadString("http://chocolatey.org/install.ps1"))
+
+cinst ruby1.9
+cinst ruby.devkit.ruby193
+gem install chef-solo
